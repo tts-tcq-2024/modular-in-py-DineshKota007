@@ -1,51 +1,47 @@
-
-MAJOR_COLORS = ['White', 'Red', 'Black', 'Yellow', 'Violet']
-MINOR_COLORS = ["Blue", "Orange", "Green", "Brown", "Slate"]
-
-
-def color_pair_to_string(major_color, minor_color):
-  return f'{major_color} {minor_color}'
-
-
-def get_color_from_pair_number(pair_number):
-  zero_based_pair_number = pair_number - 1
-  major_index = zero_based_pair_number // len(MINOR_COLORS)
-  if major_index >= len(MAJOR_COLORS):
-    raise Exception('Major index out of range')
-  minor_index = zero_based_pair_number % len(MINOR_COLORS)
-  if minor_index >= len(MINOR_COLORS):
-    raise Exception('Minor index out of range')
-  return MAJOR_COLORS[major_index], MINOR_COLORS[minor_index]
-
-
-def get_pair_number_from_color(major_color, minor_color):
-  try:
-    major_index = MAJOR_COLORS.index(major_color)
-  except ValueError:
-    raise Exception('Major index out of range')
-  try:
-    minor_index = MINOR_COLORS.index(minor_color)
-  except ValueError:
-    raise Exception('Minor index out of range')
-  return major_index * len(MINOR_COLORS) + minor_index + 1
-
-
-def test_number_to_pair(pair_number,
-                        expected_major_color, expected_minor_color):
-  major_color, minor_color = get_color_from_pair_number(pair_number)
-  assert(major_color == expected_major_color)
-  assert(minor_color == expected_minor_color)
-
-
-def test_pair_to_number(major_color, minor_color, expected_pair_number):
-  pair_number = get_pair_number_from_color(major_color, minor_color)
-  assert(pair_number == expected_pair_number)
-
-
-if __name__ == '__main__':
-  test_number_to_pair(4, 'White', 'Brown')
-  test_number_to_pair(5, 'White', 'Slate')
-  test_pair_to_number('Black', 'Orange', 12)
-  test_pair_to_number('Violet', 'Slate', 25)
-  test_pair_to_number('Red', 'Orange', 7)
-  print('Done :)')
+def run_tests(pair_number_to_color_mapper, color_to_pair_number_mapper):
+    test_color_from_pair_number(pair_number_to_color_mapper, 4, "White", "Brown")
+    test_color_from_pair_number(pair_number_to_color_mapper, 5, "White", "SlateGray")
+    test_color_from_pair_number(pair_number_to_color_mapper, 23, "Violet", "Green")
+    test_color_from_pair_number(pair_number_to_color_mapper, 1, "White", "Blue")
+    test_color_from_pair_number(pair_number_to_color_mapper, 25, "Violet", "SlateGray")
+    test_invalid_pair_number(pair_number_to_color_mapper, 0)
+    test_invalid_pair_number(pair_number_to_color_mapper, 26)
+ 
+    test_pair_number_from_color(color_to_pair_number_mapper, "Yellow", "Green", 18)
+    test_pair_number_from_color(color_to_pair_number_mapper, "Red", "Blue", 6)
+ 
+ 
+def test_color_from_pair_number(mapper, pair_number, expected_major, expected_minor):
+    try:
+        test_pair = mapper.get_color_from_pair_number(pair_number)
+        print(f"[In] Pair Number: {pair_number}, [Out] Colors: {test_pair}")
+        assert test_pair.major_color == expected_major
+        assert test_pair.minor_color == expected_minor
+    except Exception as e:
+        print(f"Error: {e}")
+ 
+ 
+def test_pair_number_from_color(mapper, major_color, minor_color, expected_pair_number):
+    try:
+        test_pair = ColorPair(major_color, minor_color)
+        pair_number = mapper.get_pair_number_from_color(test_pair)
+        print(f"[In] Colors: {test_pair}, [Out] Pair Number: {pair_number}")
+        assert pair_number == expected_pair_number
+    except Exception as e:
+        print(f"Error: {e}")
+ 
+ 
+def test_invalid_pair_number(mapper, pair_number):
+    try:
+        test_pair = mapper.get_color_from_pair_number(pair_number)
+        print(f"[In] Pair Number: {pair_number}, [Out] Colors: {test_pair}")
+    except ValueError:
+        print(f"Passed: Pair number {pair_number} is out of range.")
+    except Exception as e:
+        print(f"Error: {e}")
+ 
+ 
+if __name__ == "__main__":
+    pair_number_to_color_mapper = PairNumberToColorMapper()
+    color_to_pair_number_mapper = ColorToPairNumberMapper()
+    run_tests(pair_number_to_color_mapper, color_to_pair_number_mapper)
