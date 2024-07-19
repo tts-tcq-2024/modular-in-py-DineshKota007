@@ -1,5 +1,5 @@
 from ColorCodeMapperBase import ColorCodeMapperBase
-from ClolorPair import ColorPair
+from ColorPair import ColorPair
 class PairNumberToColorMapper(ColorCodeMapperBase):
     def get_color_from_pair_number(self, pair_number):
         self.validate_pair_number(pair_number)
