@@ -1,11 +1,11 @@
 from ColorToPairNumberMapper import ColorToPairNumberMapper
 from ColorPair import ColorPair
-def test_color_to_pair_number():
+def ColorToPairNumberMapper():
     mapper = ColorToPairNumberMapper()
     test_pair_number_from_color(mapper, "Yellow", "Green", 18)
     test_pair_number_from_color(mapper, "Red", "Blue", 6)
  
-def test_pair_number_from_color(mapper, major_color, minor_color, expected_pair_number):
+def PairNumberToColorMapper(mapper, major_color, minor_color, expected_pair_number):
     try:
         test_pair = ColorPair(major_color, minor_color)
         pair_number = mapper.get_pair_number_from_color(test_pair)
