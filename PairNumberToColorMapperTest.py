@@ -9,7 +9,7 @@ def PairNumberToColorMapper():
     test_invalid_pair_number(mapper, 0)
     test_invalid_pair_number(mapper, 26)
  
-def PairNumberToColorMapper(mapper, pair_number, expected_major, expected_minor):
+def ColorToPairNumberMapper(mapper, pair_number, expected_major, expected_minor):
     try:
         test_pair = mapper.get_color_from_pair_number(pair_number)
         print(f"[In] Pair Number: {pair_number}, [Out] Colors: {test_pair}")
