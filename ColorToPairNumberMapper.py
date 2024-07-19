@@ -1,3 +1,5 @@
+from ColorCodeMapperBase import ColorCodeMapperBase
+from ClolorPair import ColorPair
 class ColorToPairNumberMapper(ColorCodeMapperBase):
     def get_pair_number_from_color(self, color_pair):
         major_index = self.get_color_index(self.color_map_major, color_pair.major_color)
