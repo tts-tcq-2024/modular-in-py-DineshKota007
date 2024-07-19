@@ -1,5 +1,5 @@
 from PairNumberToColorMapper import PairNumberToColorMapper
-def test_pair_number_to_color():
+def PairNumberToColorMapper():
     mapper = PairNumberToColorMapper()
     test_color_from_pair_number(mapper, 4, "White", "Brown")
     test_color_from_pair_number(mapper, 5, "White", "SlateGray")
@@ -9,7 +9,7 @@ def test_pair_number_to_color():
     test_invalid_pair_number(mapper, 0)
     test_invalid_pair_number(mapper, 26)
  
-def test_color_from_pair_number(mapper, pair_number, expected_major, expected_minor):
+def PairNumberToColorMapper(mapper, pair_number, expected_major, expected_minor):
     try:
         test_pair = mapper.get_color_from_pair_number(pair_number)
         print(f"[In] Pair Number: {pair_number}, [Out] Colors: {test_pair}")
@@ -18,7 +18,7 @@ def test_color_from_pair_number(mapper, pair_number, expected_major, expected_mi
     except Exception as e:
         print(f"Error: {e}")
  
-def test_invalid_pair_number(mapper, pair_number):
+def PairNumberToColorMapper(mapper, pair_number):
     try:
         test_pair = mapper.get_color_from_pair_number(pair_number)
         print(f"[In] Pair Number: {pair_number}, [Out] Colors: {test_pair}")
