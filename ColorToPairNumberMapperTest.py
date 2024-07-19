@@ -1,4 +1,5 @@
 from ColorToPairNumberMapper import ColorToPairNumberMapper
+from ColorPair import ColorPair
 def test_color_to_pair_number():
     mapper = ColorToPairNumberMapper()
     test_pair_number_from_color(mapper, "Yellow", "Green", 18)
