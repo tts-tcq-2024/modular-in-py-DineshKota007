@@ -1,4 +1,4 @@
-from ClolorPair import ColorPair
+from ColorPair import ColorPair
 from ColorToPairNumberMapper import ColorToPairNumberMapper
 from PairNumberToColorMapper import PairNumberToColorMapper
 def run_tests(pair_number_to_color_mapper, color_to_pair_number_mapper):
