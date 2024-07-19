@@ -1,3 +1,6 @@
+from ClolorPair import ColorPair
+from ColorToPairNumberMapper import ColorToPairNumberMapper
+from PairNumberToColorMapper import PairNumberToColorMapper
 def run_tests(pair_number_to_color_mapper, color_to_pair_number_mapper):
     test_color_from_pair_number(pair_number_to_color_mapper, 4, "White", "Brown")
     test_color_from_pair_number(pair_number_to_color_mapper, 5, "White", "SlateGray")
