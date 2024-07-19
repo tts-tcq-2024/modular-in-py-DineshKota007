@@ -1,5 +1,5 @@
-from ColorToPairNumberTest import ColorToPairNumberTest
-from PairNumberToColorMapper import PairNumberToColorMapper
+from ColorToPairNumberMapperTest import ColorToPairNumberMapperTest
+from PairNumberToColorMapperTest import PairNumberToColorMapperTest
 def run_tests():
-    ColorToPairNumberTest()
-    PairNumberToColorMapper()
+    ColorToPairNumberMapperTest()
+    PairNumberToColorMapperTest()
