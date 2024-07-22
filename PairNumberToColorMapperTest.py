@@ -1,11 +1,11 @@
 from PairNumberToColorMapper import PairNumberToColorMapper
 def PairNumberToColorMapper():
     mapper = PairNumberToColorMapper()
-    test_color_from_pair_number(mapper, 4, "White", "Brown")
-    test_color_from_pair_number(mapper, 5, "White", "SlateGray")
-    test_color_from_pair_number(mapper, 23, "Violet", "Green")
-    test_color_from_pair_number(mapper, 1, "White", "Blue")
-    test_color_from_pair_number(mapper, 25, "Violet", "SlateGray")
+    PairNumberToColorMapperTest(mapper, 4, "White", "Brown")
+    PairNumberToColorMapperTest(mapper, 5, "White", "SlateGray")
+    PairNumberToColorMapperTest(mapper, 23, "Violet", "Green")
+    PairNumberToColorMapperTest(mapper, 1, "White", "Blue")
+    PairNumberToColorMapperTest(mapper, 25, "Violet", "SlateGray")
     test_invalid_pair_number(mapper, 0)
     test_invalid_pair_number(mapper, 26)
  
