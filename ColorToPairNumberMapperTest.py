@@ -2,8 +2,8 @@ from ColorToPairNumberMapper import ColorToPairNumberMapper
 from ColorPair import ColorPair
 def ColorToPairNumberMapper():
     mapper = ColorToPairNumberMapper()
-    test_pair_number_from_color(mapper, "Yellow", "Green", 18)
-    test_pair_number_from_color(mapper, "Red", "Blue", 6)
+    ColorToPairNumberMapperTest(mapper, "Yellow", "Green", 18)
+    ColorToPairNumberMapperTest(mapper, "Red", "Blue", 6)
  
 def PairNumberToColorMapper(mapper, major_color, minor_color, expected_pair_number):
     try:
