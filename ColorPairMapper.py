@@ -1,6 +1,6 @@
-from color_mapping import ColorMapping
-from color_pair import ColorPair
-from color_pair_mapper_base import ColorPairMapperBase
+from ColorMapping import ColorMapping
+from ColorPair import ColorPair
+from ColorPairMapperBase import ColorPairMapperBase
  
 class ColorPairMapper(ColorPairMapperBase):
     def map_number_to_color_pair(self, pair_number: int) -> ColorPair:
