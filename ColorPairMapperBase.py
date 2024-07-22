@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from ColorPair import ColorPair
+from ColorMapping import ColorMapping
  
 class ColorPairMapperBase(ABC):
     @abstractmethod
